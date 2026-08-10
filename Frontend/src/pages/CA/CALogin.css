@@ -1,0 +1,328 @@
+:root {
+  --color-primary: #0D9488;
+  --color-secondary: #14B8A6;
+  --color-accent: #2DD4BF;
+  --color-bg: #F8FAFC;
+  --color-dark: #14243B;
+  --color-white: #FFFFFF;
+  --color-ink-700: #334155;
+  --color-ink-500: #64748B;
+  --color-ink-300: #CBD5E1;
+  --color-ink-100: #E2E8F0;
+  --color-line: rgba(20, 36, 59, 0.08);
+  --gradient-primary: linear-gradient(135deg, #0D9488 0%, #2DD4BF 100%);
+  --font-display: 'Poppins', 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --radius-sm: 9px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 48px rgba(15, 23, 42, 0.14);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* { box-sizing: border-box; }
+
+.ca-page {
+  height: 100vh;
+  min-height: 640px;
+  display: grid;
+  grid-template-columns: 46% 54%;
+  font-family: var(--font-body);
+  background: var(--color-bg);
+}
+
+/* ---------------- Photo side ---------------- */
+.ca-photo {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  padding: 34px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.ca-photo__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(20, 36, 59, 0.88) 0%, rgba(13, 148, 136, 0.75) 100%);
+}
+
+.ca-photo__content {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+.ca-photo__content h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1.18;
+  margin-bottom: 12px;
+  max-width: 420px;
+}
+
+.ca-photo__content p {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 380px;
+  margin-bottom: 22px;
+}
+
+.ca-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.ca-stat {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  backdrop-filter: blur(6px);
+}
+
+.ca-stat__icon {
+  display: flex;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 8px;
+}
+
+.ca-stat__value {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  color: white;
+}
+
+.ca-stat__label {
+  display: block;
+  font-size: 10.5px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 2px;
+}
+
+/* ---------------- Form side ---------------- */
+.ca-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 24px;
+}
+
+.ca-card {
+  width: 100%;
+  max-width: 400px;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 26px 32px;
+}
+
+.ca-card__logo {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 19px;
+  color: var(--color-primary);
+  margin-bottom: 18px;
+}
+
+.ca-card__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--color-dark);
+  margin-bottom: 6px;
+}
+
+.ca-card__desc {
+  font-size: 13.5px;
+  color: var(--color-ink-500);
+  margin-bottom: 22px;
+}
+
+.ca-field {
+  display: block;
+  margin-bottom: 14px;
+}
+
+.ca-field__label {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 12.5px;
+  color: var(--color-dark);
+  margin-bottom: 7px;
+}
+
+.ca-field input {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-dark);
+  background: var(--color-white);
+  border: 1px solid var(--color-ink-100);
+  border-radius: var(--radius-sm);
+  padding: 11px 14px;
+  transition: border-color var(--ease-out) 0.15s, box-shadow var(--ease-out) 0.15s;
+}
+
+.ca-field input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.12);
+}
+
+.ca-field input::placeholder {
+  color: var(--color-ink-300);
+}
+
+.ca-field__input-wrap {
+  position: relative;
+  display: block;
+}
+
+.ca-field__input-wrap input {
+  padding-right: 42px;
+}
+
+.ca-field__eye {
+  position: absolute;
+  top: 50%;
+  right: 11px;
+  transform: translateY(-50%);
+  color: var(--color-ink-500);
+  display: flex;
+}
+
+.ca-field-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.ca-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--color-ink-700);
+  cursor: pointer;
+}
+
+.ca-checkbox input {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--color-primary);
+}
+
+.ca-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.ca-submit {
+  width: 100%;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14.5px;
+  color: var(--color-white);
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 13px;
+  cursor: pointer;
+  box-shadow: 0 14px 28px rgba(13, 148, 136, 0.26);
+  transition: transform var(--ease-out) 0.15s;
+}
+
+.ca-submit:hover {
+  transform: translateY(-2px);
+}
+
+.ca-card__footer {
+  text-align: center;
+  font-size: 13.5px;
+  color: var(--color-ink-500);
+  margin-top: 18px;
+}
+
+.ca-card__footer a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.ca-encryption {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(13, 148, 136, 0.06);
+  border: 1px solid rgba(13, 148, 136, 0.14);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+}
+
+.ca-encryption__icon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.ca-encryption__title {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 12.5px;
+  color: var(--color-dark);
+}
+
+.ca-encryption__sub {
+  display: block;
+  font-size: 11.5px;
+  color: var(--color-ink-500);
+}
+
+.ca-badges {
+  display: flex;
+  gap: 20px;
+}
+
+.ca-badges span {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--color-ink-300);
+}
+
+@media (max-width: 900px) {
+  .ca-page {
+    height: auto;
+    min-height: 100vh;
+    grid-template-columns: 1fr;
+  }
+  .ca-photo {
+    min-height: 300px;
+    padding: 28px 24px;
+  }
+  .ca-photo__content h1 {
+    font-size: 24px;
+  }
+  .ca-stats {
+    display: none;
+  }
+  .ca-main {
+    padding: 28px 20px 40px;
+  }
+}

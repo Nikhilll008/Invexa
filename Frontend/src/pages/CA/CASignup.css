@@ -1,0 +1,344 @@
+:root {
+  --color-primary: #0D9488;
+  --color-secondary: #14B8A6;
+  --color-accent: #2DD4BF;
+  --color-bg: #F8FAFC;
+  --color-dark: #14243B;
+  --color-white: #FFFFFF;
+  --color-ink-700: #334155;
+  --color-ink-500: #64748B;
+  --color-ink-300: #CBD5E1;
+  --color-ink-100: #E2E8F0;
+  --color-line: rgba(20, 36, 59, 0.08);
+  --gradient-primary: linear-gradient(135deg, #0D9488 0%, #2DD4BF 100%);
+  --font-display: 'Poppins', 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --radius-sm: 9px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 48px rgba(15, 23, 42, 0.14);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* { box-sizing: border-box; }
+
+.ca-page {
+  height: 100vh;
+  min-height: 680px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  font-family: var(--font-body);
+  background: var(--color-bg);
+}
+
+/* ---------------- Photo side ---------------- */
+.ca-photo {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  padding: 26px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.ca-photo__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(20, 36, 59, 0.82) 0%, rgba(13, 148, 136, 0.68) 100%);
+}
+
+.ca-photo__badges {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ca-photo__badges span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: white;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 7px 12px;
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(6px);
+}
+
+.ca-photo__impact {
+  position: relative;
+  z-index: 1;
+  background: rgba(20, 36, 59, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  backdrop-filter: blur(8px);
+}
+
+.ca-photo__impact-title {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16px;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.ca-impact-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 0;
+}
+
+.ca-impact-row__icon {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 9px;
+  color: white;
+}
+
+.ca-impact-row__label {
+  display: block;
+  font-size: 10.5px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.ca-impact-row__value {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 17px;
+  color: white;
+}
+
+/* ---------------- Form side ---------------- */
+.ca-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.ca-card {
+  width: 100%;
+  max-width: 400px;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 26px 30px;
+}
+
+.ca-card--wide {
+  max-width: 560px;
+  padding: 28px 34px;
+}
+
+.ca-card__logo {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--color-primary);
+  margin-bottom: 14px;
+}
+
+.ca-card__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 23px;
+  color: var(--color-dark);
+  margin-bottom: 6px;
+}
+
+.ca-card__desc {
+  font-size: 12.5px;
+  color: var(--color-ink-500);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.ca-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 16px;
+  margin-bottom: 14px;
+}
+
+.ca-field {
+  display: block;
+}
+
+.ca-field--full {
+  grid-column: 1 / -1;
+}
+
+.ca-field__label {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 11.5px;
+  color: var(--color-dark);
+  margin-bottom: 6px;
+}
+
+.ca-field input {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: var(--color-dark);
+  background: var(--color-white);
+  border: 1px solid var(--color-ink-100);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  transition: border-color var(--ease-out) 0.15s, box-shadow var(--ease-out) 0.15s;
+}
+
+.ca-field input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.12);
+}
+
+.ca-field input::placeholder {
+  color: var(--color-ink-300);
+}
+
+.ca-field__input-wrap {
+  position: relative;
+  display: block;
+}
+
+.ca-field__input-wrap input {
+  padding-right: 38px;
+}
+
+.ca-field__eye {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: var(--color-ink-500);
+  display: flex;
+}
+
+.ca-field__phone-wrap {
+  display: flex;
+  align-items: stretch;
+}
+
+.ca-field__country-code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-ink-700);
+  background: var(--color-bg);
+  border: 1px solid var(--color-ink-100);
+  border-right: none;
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+}
+
+.ca-field__phone-wrap input {
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.ca-confirm-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--color-ink-700);
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.ca-confirm-checkbox input {
+  width: 15px;
+  height: 15px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  accent-color: var(--color-primary);
+}
+
+.ca-submit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14.5px;
+  color: var(--color-white);
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 13px;
+  cursor: pointer;
+  box-shadow: 0 14px 28px rgba(13, 148, 136, 0.26);
+  transition: transform var(--ease-out) 0.15s;
+}
+
+.ca-submit:hover {
+  transform: translateY(-2px);
+}
+
+.ca-card__footer {
+  text-align: center;
+  font-size: 13px;
+  color: var(--color-ink-500);
+  margin-top: 16px;
+}
+
+.ca-card__footer a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .ca-page {
+    height: auto;
+    min-height: 100vh;
+    grid-template-columns: 1fr;
+  }
+  .ca-photo {
+    min-height: 260px;
+  }
+  .ca-photo__impact {
+    display: none;
+  }
+  .ca-main {
+    padding: 24px 18px 36px;
+  }
+  .ca-card--wide {
+    padding: 24px 22px;
+  }
+}
+
+@media (max-width: 560px) {
+  .ca-grid {
+    grid-template-columns: 1fr;
+  }
+  .ca-field--full {
+    grid-column: 1;
+  }
+}
