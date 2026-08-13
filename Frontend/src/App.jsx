@@ -50,7 +50,7 @@ return (
 
 <Route path="/notifications" element={<Notifications />} />
 
-<Route path="/help-support" element={<HelpSupport />} />
+<Route path="/help-support" element={<HelpSupport />} /> 
 
 </Routes>
 
