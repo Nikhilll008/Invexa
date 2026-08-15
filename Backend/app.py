@@ -13,6 +13,9 @@ from datetime import datetime, timedelta
 from models.user import create_owner
 from utils.password import hash_password,check_password
 
+from modules.ocr.ocr_routes import register_ocr_routes
+from modules.validation.validation_routes import register_validation_routes
+
 
 # Load .env file
 
@@ -42,6 +45,10 @@ app.config["SECRET_KEY"] = SECRET_KEY
 # MongoDB
 mongo = PyMongo(app)
 print("Selected DB:", mongo.db)
+
+register_ocr_routes(app, mongo)
+
+register_validation_routes(app, mongo)
 
 
 # Home Route

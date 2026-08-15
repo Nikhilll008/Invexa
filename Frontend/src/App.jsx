@@ -17,6 +17,8 @@ import Settings from "./pages/User/Settings/Settings";
 import Notifications from "./pages/User/Notifications/Notifications";
 import HelpSupport from "./pages/User/HelpSupport/HelpSupport";
 
+import OcrReview from "./pages/User/OcrReview/OcrReview";
+
 function App() {
 
 return (
@@ -46,11 +48,15 @@ return (
 
 <Route path="/invoices" element={<Invoices />} />
 
+<Route path="/ocr-review" element={<OcrReview />} />
+
 <Route path="/settings" element={<Settings />} />
 
 <Route path="/notifications" element={<Notifications />} />
 
 <Route path="/help-support" element={<HelpSupport />} /> 
+
+
 
 </Routes>
 
